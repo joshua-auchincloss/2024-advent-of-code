@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cargo workspaces create $@ --bin --edition 2021 --name $@
