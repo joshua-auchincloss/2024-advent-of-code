@@ -68,10 +68,8 @@ fn freq_diff(a: Vec<i32>, b: Vec<i32>) -> i32 {
 }
 
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
-    let src = args.get(1).expect("source file");
-
-    let data = std::fs::read_to_string(src).expect("valid utf-8 encoded data");
+    let args = common::args();
+    let data = args.file();
 
     let (left, right) = parse_lists(data);
 

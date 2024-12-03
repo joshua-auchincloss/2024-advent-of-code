@@ -69,12 +69,9 @@ fn parse_input(buf: String) -> Vec<Vec<u32>> {
 }
 
 fn main() {
-    let args = args().collect::<Vec<_>>();
-
-    let src = args.get(1).expect("reports file to be provided");
-    let with_tolerance = args.iter().any(|it| it == "--with-tolerance");
-
-    let buf = std::fs::read_to_string(src).expect("valid utf-8 encoded file");
+    let args = common::args();
+    let buf = args.file();
+    let with_tolerance = args.boolean_flag("--with-tolerance");
 
     let parsed = parse_input(buf);
 
