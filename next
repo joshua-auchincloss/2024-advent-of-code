@@ -2,3 +2,4 @@
 
 cargo workspaces create $@ --bin --edition 2021 --name $@
 cargo add -p $@ common --path ./common
+touch $@/sample
